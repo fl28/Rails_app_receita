@@ -3,7 +3,12 @@
 <ul>
 
 <% @recipies.each do |recipie| %>
-	<li> <%= recipie %> </li>
+	<li>
+	 <%= recipie.name %> 
+	 <%= recipie.stuff %> 
+     <%= recipie.calories %> 
+
+	</li>
 <% end %>
 </ul>
 
