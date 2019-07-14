@@ -1,14 +1,36 @@
 <h1>Receitas</h1>
 
-<ul>
+<% @recipies.each do |recipe| %>
+	<article>
+		<header>
+			<h2> <%= recipe.name %> </h2>
+		</header>
+		<p>
+			<%= recipe.stuff %>
+		</p>
+		<p>
+			<%= recipe.calories %>
+		</p>
+		<table>
+			
+			<tr>
+				<th>Modo de preparo:</th>
+				<td> <%= recipe.prepare_mode %> </td>
+			</tr>
+			
+			<tr>	
+			    <th>Custo do prato:</th>
+				<td> <%= number_to_currency(recipe.cost) %> </td>
+			</tr>
+		</table>	
+<% end %>		
+		
+	</article>
 
-<% @recipies.each do |recipie| %>
-	<li>
-	 <%= recipie.name %> 
-	 <%= recipie.stuff %> 
-     <%= recipie.calories %> 
 
-	</li>
-<% end %>
-</ul>
+
+
+
+
+
 
